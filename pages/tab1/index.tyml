@@ -1,0 +1,70 @@
+<view class="form-page">
+  <view class="page-section">
+    <form bind:submit="handleSubmit" bind:reset="handleReset" id="formSelf">
+      <view class="item-wrap">
+        <text class="page-section-title section-title">switch</text>
+        <switch name="switch"></switch>
+      </view>
+ 
+      <view class="item-wrap">
+        <text class="page-section-title section-title">slider</text>
+        <slider name="slider" show-value="{{true}}" value="{{42}}"></slider>
+      </view>
+ 
+      <view class="item-wrap">
+        <text class="page-section-title section-title">checkbox</text>
+        <checkbox-group name="CheckboxGroup">
+          <checkbox class="radio" value="Option 1">
+            <text class="text">Option 1</text>
+          </checkbox>
+          <checkbox class="radio" value="Option 2">
+            <text class="text">Option 2</text>
+          </checkbox>
+        </checkbox-group>
+      </view>
+ 
+      <view class="item-wrap">
+        <text class="page-section-title section-title">radio</text>
+        <radio-group name="RadioGroup">
+          <radio class="radio" value="Single-Select 1">
+            <text class="text">Single-Select 1</text>
+          </radio>
+          <radio class="radio" value="Single-Select 2">
+            <text class="text">Single-Select 2</text>
+          </radio>
+        </radio-group>
+      </view>
+ 
+      <view class="item-wrap">
+        <text class=" page-section-title section-title">input</text>
+        <view class="tyui-cell">
+          <input class="tyui-input" name="input" placeholder="Please enter" />
+        </view>
+      </view>
+ 
+      <view class="item-wrap">
+        <text class="page-section-title section-title">textarea</text>
+        <view class="textarea-wrap">
+          <textarea name="textarea" class="txtarea-box" bind:input="handleTextareaInput"></textarea>
+        </view>
+      </view>
+ 
+      <view class="btns-wrap">
+        <view class="btn-line">
+          <button form-type="submit" id="triggerBtn" data-info="Submit button" type="primary" class="submit-btn">Submit</button>
+        </view>
+        <view class="btn-line">
+          <button form-type="reset" id="resetBtn" data-info="Reset button" class="reset-btn">Reset</button>
+        </view>
+      </view>
+    </form>
+ 
+    <view class="result-wrap">
+      <view ty:for="{{resultData}}" ty:key="{{item.name}}" class="result-item">
+        <text class="result-name">{{item.name}}: </text>
+        <text>{{item.value}}</text>
+      </view>
+    </view>
+ 
+  </view>
+</view>
